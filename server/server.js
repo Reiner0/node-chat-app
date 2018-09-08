@@ -20,8 +20,9 @@ io.on("connection", socket => {
 
 	socket.broadcast.emit("newMessage", generateMessage("Admin", "New user joined"));
 
-	socket.on("createMessage", ({ from, text }) => {
-		io.emit("newMessage", generateMessage(from, text));
+	socket.on("createMessage", (message, callback) => {
+		io.emit("newMessage", generateMessage(message.from, message.text));
+		callback("This is from the server");
 	});
 
 	socket.on("disconnect", () => {
