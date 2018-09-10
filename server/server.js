@@ -1,3 +1,7 @@
+// TODO: chat rooms case insensitive
+// TODO: usernames unique requirement
+// TODO: add list of currently active chat rooms on login page
+
 const path = require("path");
 const http = require("http");
 const express = require("express");
